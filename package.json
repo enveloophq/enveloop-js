@@ -1,0 +1,23 @@
+{
+  "name": "enveloop",
+  "version": "0.1.0",
+  "description": "This package provides a wrapper for the Envelope API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enveloophq/enveloop-node.git"
+  },
+  "keywords": [
+    "enveloop",
+    "api"
+  ],
+  "author": "Ben Wyrosdick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enveloophq/enveloop-node/issues"
+  },
+  "homepage": "https://github.com/enveloophq/enveloop-node#readme"
+}
