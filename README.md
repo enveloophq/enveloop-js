@@ -18,6 +18,8 @@ npm install --save 'enveloop'
 
 ## Usage
 
+Send a message:
+
 ```js
 const Enveloop = require('enveloop')
 const enveloop = new Enveloop({ apiKey: process.env.ENVELOOP_API_TOKEN })
@@ -35,10 +37,20 @@ enveloop.sendMessage({
 .catch(err => console.log(err))
 ```
 
+Get information about a template (variables and body html):
+
+```js
+const Enveloop = require('enveloop')
+const enveloop = new Enveloop({ apiKey: process.env.ENVELOOP_API_TOKEN })
+
+enveloop.templateInfo({ template: 'welcome-email' })
+.then(res => console.log(res))
+.catch(err => console.log(err))
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/enveloophq/enveloop-js. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/enveloophq/enveloop-js/blob/master/CODE_OF_CONDUCT.md).
-
 
 ## License
 
