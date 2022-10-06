@@ -1,6 +1,6 @@
 # Enveloop
 
-enveloop-ruby is a ruby wrapper for the Enveloop API. It allows easy use of the API to send messages.
+enveloop-js is a node wrapper for the Enveloop API. It allows easy use of the API to send messages.
 
 ## Installation
 
