@@ -18,12 +18,16 @@ npm install --save 'enveloop'
 
 ## Usage
 
-Send a message:
+Setup the client connection:
 
 ```js
 const Enveloop = require('enveloop')
 const enveloop = new Enveloop({ apiKey: process.env.ENVELOOP_API_TOKEN })
+```
 
+Send a message:
+
+```js
 enveloop.sendMessage({
   template: 'welcome-email',
   to: 'user@email.com',
@@ -40,9 +44,6 @@ enveloop.sendMessage({
 Get information about a template (variables and body html):
 
 ```js
-const Enveloop = require('enveloop')
-const enveloop = new Enveloop({ apiKey: process.env.ENVELOOP_API_TOKEN })
-
 enveloop.templateInfo({ template: 'welcome-email' })
 .then(res => console.log(res))
 .catch(err => console.log(err))
