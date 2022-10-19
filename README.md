@@ -33,7 +33,7 @@ enveloop.sendMessage({
   to: 'user@email.com',
   from: 'welcome@myapp.com',
   subject: 'Welcome to MyApp',
-  userVariables: {
+  templateVariables: {
     first_name: 'John',
   }
 )
