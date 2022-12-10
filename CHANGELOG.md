@@ -22,3 +22,7 @@
 * Do not require `from` in api call to allow for default from in template
 * Do not require `subject` in api call to allow for default subject in template
 * send `Sdk-Version` header for tracking of SDK usage and future deprection warnings
+
+> ## Version 0.1.5
+
+* Use new `/messages` endpoint

@@ -1,6 +1,6 @@
 {
   "name": "enveloop",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "This package provides a wrapper for the Envelope API.",
   "main": "index.js",
   "scripts": {
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/enveloophq/enveloop-node#readme",
   "dependencies": {
     "node-fetch": "~2"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
   }
 }
