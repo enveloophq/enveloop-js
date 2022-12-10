@@ -22,5 +22,8 @@
   "homepage": "https://github.com/enveloophq/enveloop-node#readme",
   "dependencies": {
     "node-fetch": "~2"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
   }
 }
