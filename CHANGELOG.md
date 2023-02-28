@@ -26,3 +26,7 @@
 > ## Version 0.1.5
 
 * Use new `/messages` endpoint
+
+> ## Version 0.1.6
+
+* Throw errors on API failure
