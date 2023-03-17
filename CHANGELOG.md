@@ -30,3 +30,7 @@
 > ## Version 0.1.6
 
 * Throw errors on API failure
+
+> ## Version 0.1.7
+
+* Fix bug on templateInfo not returning proper error when template not found
