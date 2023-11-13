@@ -8,7 +8,8 @@ type EnveloopOptions = {
 }
 
 type EnveloopMessageOptions = {
-  template: string
+  template?: string
+  html?: string
   to: string
   from: string
   subject: string
@@ -22,7 +23,7 @@ type EnveloopTemplateOptions = {
 class Enveloop {
   private endpoint: string
   private apiKey: string
-  
+
   constructor ({ apiKey, apiHost = 'api.enveloop.com', ssl = true }: EnveloopOptions) {
     if (!apiKey) {
       throw new Error('apiKey value must be defined!')
@@ -32,8 +33,8 @@ class Enveloop {
     this.apiKey = apiKey
   }
 
-  async sendMessage ({ template, to, from, subject, templateVariables = {} }: EnveloopMessageOptions) {
-    const data = { to, from, subject, template, templateVariables }
+  async sendMessage ({ template, html, to, from, subject, templateVariables = {} }: EnveloopMessageOptions) {
+    const data = { template, html, to, from, subject, templateVariables }
 
     const response = await fetch(`${this.endpoint}/messages`, {
       method: "POST",
