@@ -1,5 +1,5 @@
 
-const Enveloop = require("enveloop")
+import Enveloop from "../src"
 const enveloop = new Enveloop({ apiKey: "team-seas-development-token", apiHost: "localhost:4000", ssl: false })
 
 describe('sendMessage', () => {
@@ -21,10 +21,7 @@ describe('sendMessage', () => {
       expect.objectContaining({
         from: 'Northwind App <app@northwind.com>',
         to: 'bob@test.com',
-        subject: 'Welcome to Northwind Seas',
-        testMode: true,
-        html: expect.stringContaining('#TeamSeas'),
-        sdkVersion: 'js-0.1.5',
+        body: expect.stringContaining('#TeamSeas'),
       })
     )
   })

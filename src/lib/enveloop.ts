@@ -1,8 +1,29 @@
-const fetch = require('node-fetch')
-const { version } = require('../package')
+import fetch from 'node-fetch'
+import { version } from '../../package.json'
+
+type EnveloopOptions = {
+  apiKey: string
+  apiHost?: string
+  ssl?: boolean
+}
+
+type EnveloopMessageOptions = {
+  template: string
+  to: string
+  from: string
+  subject: string
+  templateVariables?: object
+}
+
+type EnveloopTemplateOptions = {
+  template: string
+}
 
 class Enveloop {
-  constructor ({ apiKey, apiHost = 'api.enveloop.com', ssl = true }) {
+  private endpoint: string
+  private apiKey: string
+  
+  constructor ({ apiKey, apiHost = 'api.enveloop.com', ssl = true }: EnveloopOptions) {
     if (!apiKey) {
       throw new Error('apiKey value must be defined!')
     }
@@ -11,7 +32,7 @@ class Enveloop {
     this.apiKey = apiKey
   }
 
-  async sendMessage ({ template, to, from, subject, templateVariables = {} }) {
+  async sendMessage ({ template, to, from, subject, templateVariables = {} }: EnveloopMessageOptions) {
     const data = { to, from, subject, template, templateVariables }
 
     const response = await fetch(`${this.endpoint}/messages`, {
@@ -32,7 +53,7 @@ class Enveloop {
     return { status: response.status, message }
   }
   
-  async templateInfo ({ template }) {
+  async templateInfo ({ template }: EnveloopTemplateOptions) {
     const response = await fetch(`${this.endpoint}/templates/${template}`, {
       method: "GET",
       headers: {
@@ -50,4 +71,4 @@ class Enveloop {
   }
 }
 
-module.exports = Enveloop
+export { Enveloop }
