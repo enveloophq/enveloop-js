@@ -20,6 +20,17 @@ type EnveloopTemplateOptions = {
   template: string
 }
 
+type EnveloopMessageResponse = {
+  to: string
+  from: string
+  body: string
+}
+
+type EnveloopTemplateResponse = {
+  templateVariables: [string]
+  body: string
+}
+
 class Enveloop {
   private endpoint: string
   private apiKey: string
@@ -33,7 +44,7 @@ class Enveloop {
     this.apiKey = apiKey
   }
 
-  async sendMessage ({ template, html, to, from, subject, templateVariables = {} }: EnveloopMessageOptions) {
+  async sendMessage ({ template, html, to, from, subject, templateVariables = {} }: EnveloopMessageOptions): Promise<{ status: number, message: EnveloopMessageResponse }> {
     const data = { template, html, to, from, subject, templateVariables }
 
     const response = await fetch(`${this.endpoint}/messages`, {
@@ -54,7 +65,7 @@ class Enveloop {
     return { status: response.status, message }
   }
   
-  async templateInfo ({ template }: EnveloopTemplateOptions) {
+  async templateInfo ({ template }: EnveloopTemplateOptions): Promise<{ status: number, template: EnveloopTemplateResponse }> {
     const response = await fetch(`${this.endpoint}/templates/${template}`, {
       method: "GET",
       headers: {
@@ -67,6 +78,8 @@ class Enveloop {
     if (response.status !== 200 && templateInfo.error) {
       throw new Error(templateInfo.error)
     }
+
+    console.log({templateInfo})
 
     return { status: response.status, template: templateInfo }
   }

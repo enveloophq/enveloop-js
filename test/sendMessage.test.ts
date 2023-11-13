@@ -59,4 +59,20 @@ describe('sendMessage', () => {
       })
     }).rejects.toThrow("You cannot provide both a template and html")
   })
+
+  it('gets template via test api token', async () => {
+    const response = await enveloop.templateInfo({
+      template: "welcome-to-the-seas",
+    })
+
+    console.log({response})
+
+    expect(response.status).toBe(200)
+    expect(response.template).toEqual(
+      expect.objectContaining({
+        templateVariables: [],
+        body: expect.stringContaining('#TeamSeas'),
+      })
+    )
+  })
 })
