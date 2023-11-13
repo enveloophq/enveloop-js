@@ -1,5 +1,5 @@
 
-import Enveloop from "../src"
+import { Enveloop } from "../src"
 const enveloop = new Enveloop({ apiKey: "team-seas-development-token", apiHost: "localhost:4000", ssl: false })
 
 describe('sendMessage', () => {
