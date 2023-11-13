@@ -34,3 +34,12 @@
 > ## Version 0.1.7
 
 * Fix bug on templateInfo not returning proper error when template not found
+
+> ## Version 0.2.0
+
+* Add Typescript support
+* Add HTML message send options
+
+> ## Version 0.2.1
+
+* Fix default import

@@ -21,7 +21,7 @@ npm install --save 'enveloop'
 Setup the client connection:
 
 ```js
-const Enveloop = require('enveloop')
+const { Enveloop } = require('enveloop')
 const enveloop = new Enveloop({ apiKey: process.env.ENVELOOP_API_TOKEN })
 ```
 
