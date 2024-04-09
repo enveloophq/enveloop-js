@@ -21,6 +21,7 @@ type EnveloopTemplateOptions = {
 }
 
 type EnveloopMessageResponse = {
+  messageId: string
   to: string
   from: string
   body: string

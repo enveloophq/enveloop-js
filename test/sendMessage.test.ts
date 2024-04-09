@@ -1,6 +1,6 @@
 
 import { Enveloop } from "../src"
-const enveloop = new Enveloop({ apiKey: "team-seas-development-token", apiHost: "localhost:4000", ssl: false })
+const enveloop = new Enveloop({ apiKey: "test_TQ5ujdm0b1rM0gVm/u6B5FebAnSsnGzM" })
 
 describe('sendMessage', () => {
   it('sends email from template via test api token', async () => {
@@ -17,6 +17,7 @@ describe('sendMessage', () => {
     expect(response.status).toBe(200)
     expect(response.message).toEqual(
       expect.objectContaining({
+        messageId: expect.any(String),
         from: 'Northwind App <app@northwind.com>',
         to: 'bob@test.com',
         body: expect.stringContaining('#TeamSeas'),
@@ -38,6 +39,7 @@ describe('sendMessage', () => {
     expect(response.status).toBe(200)
     expect(response.message).toEqual(
       expect.objectContaining({
+        messageId: expect.any(String),
         from: 'Northwind App <app@northwind.com>',
         to: 'bob@test.com',
         body: expect.stringContaining('HTML VERSION'),

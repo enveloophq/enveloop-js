@@ -43,3 +43,7 @@
 > ## Version 0.2.1
 
 * Fix default import
+
+> ## Version 0.2.2
+
+* Added in `messageId` to API response when sending message
